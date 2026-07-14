@@ -14,7 +14,7 @@ maxIterations = int(input("Enter the numbers of times you want this to loop: "))
 iterations = 0
 
 driver = webdriver.Chrome()
-driver.get("...")
+driver.get("https://g0j1.github.io/AutoFormFiller/")
 driver.set_page_load_timeout(5)
 wait = WebDriverWait(driver, 5)
 
@@ -48,44 +48,6 @@ while maxIterations > 0:
 
         email_input.send_keys("kiryukazuma@fakemail.com")
 
-
-
-        suburb_input = wait.until(
-            EC.presence_of_element_located((By.ID, "suburbField"))
-        )
-
-        suburb_input.send_keys("Kamurocho")
-
-
-
-        postcode_input = wait.until(
-            EC.presence_of_element_located((By.ID, "postCodeField"))
-        )
-
-        postcode_input.send_keys("2134")
-
-
-        # dropdown_toggle = wait.until(
-        #     EC.element_to_be_clickable((By.XPATH, "//div[contains(@class,'control')]"))
-        # )
-        # dropdown_toggle.click()
-        # option = wait.until(
-        #     EC.element_to_be_clickable((By.XPATH, "//div[text()='NSW']"))
-        # )
-        # option.click()
-        #
-        # body = driver.find_element(By.TAG_NAME, "body")
-        # body.send_keys(Keys.ESCAPE)
-        #
-        # checkboxlabel = wait.until(
-        #     EC.element_to_be_clickable((By.XPATH, "//label[@for='checkBox']"))
-        # )
-        # checkboxlabel.click()
-        #
-        # checkbox = driver.find_element(By.ID, "checkBox")
-        # print(checkbox.is_selected())
-        # wait.until(lambda d: checkbox.is_selected())
-
         submit_btn = wait.until(
             EC.presence_of_element_located((By.ID, "submitButton"))
         )
@@ -104,7 +66,7 @@ while maxIterations > 0:
         time.sleep(delay)
 
         maxIterations -= 1
-        driver.get("...")
+        driver.get("https://g0j1.github.io/AutoFormFiller/")
 
     except Exception as e:
         print("page failed", e)
