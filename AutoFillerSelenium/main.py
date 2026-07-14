@@ -65,26 +65,26 @@ while maxIterations > 0:
         postcode_input.send_keys("2134")
 
 
-        dropdown_toggle = wait.until(
-            EC.element_to_be_clickable((By.XPATH, "//div[contains(@class,'control')]"))
-        )
-        dropdown_toggle.click()
-        option = wait.until(
-            EC.element_to_be_clickable((By.XPATH, "//div[text()='NSW']"))
-        )
-        option.click()
-
-        body = driver.find_element(By.TAG_NAME, "body")
-        body.send_keys(Keys.ESCAPE)
-
-        checkboxlabel = wait.until(
-            EC.element_to_be_clickable((By.XPATH, "//label[@for='checkBox']"))
-        )
-        checkboxlabel.click()
-
-        checkbox = driver.find_element(By.ID, "checkBox")
-        print(checkbox.is_selected())
-        wait.until(lambda d: checkbox.is_selected())
+        # dropdown_toggle = wait.until(
+        #     EC.element_to_be_clickable((By.XPATH, "//div[contains(@class,'control')]"))
+        # )
+        # dropdown_toggle.click()
+        # option = wait.until(
+        #     EC.element_to_be_clickable((By.XPATH, "//div[text()='NSW']"))
+        # )
+        # option.click()
+        #
+        # body = driver.find_element(By.TAG_NAME, "body")
+        # body.send_keys(Keys.ESCAPE)
+        #
+        # checkboxlabel = wait.until(
+        #     EC.element_to_be_clickable((By.XPATH, "//label[@for='checkBox']"))
+        # )
+        # checkboxlabel.click()
+        #
+        # checkbox = driver.find_element(By.ID, "checkBox")
+        # print(checkbox.is_selected())
+        # wait.until(lambda d: checkbox.is_selected())
 
         submit_btn = wait.until(
             EC.presence_of_element_located((By.ID, "submitButton"))
